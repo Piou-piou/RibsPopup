@@ -1,0 +1,49 @@
+{
+  "name": "ribs-flash-message",
+  "version": "1.0.0",
+  "description": "This module is used to display popup box with ajax or inline content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piou-piou/RibsPopup.git"
+  },
+  "keywords": [
+    "popup",
+    "js",
+    "es6",
+    "scss"
+  ],
+  "author": "pioupiou <pilloud.anthony@gmail.com> (https://anthony-pilloud.fr)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Piou-piou/RibsPopup/issues"
+  },
+  "homepage": "https://github.com/Piou-piou/RibsPopup#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.1.0",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-runtime": "^6.25.0",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
