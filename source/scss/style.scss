@@ -22,7 +22,7 @@ $color-link-hover-page: #217ED3;
 		z-index: 100;
 		margin: auto;
 		margin-top: 15%;
-		width: 960px;
+		width: 60%;
 		padding: 10px;
 		
 		h2 {
@@ -57,6 +57,7 @@ $color-link-hover-page: #217ED3;
 				color: $color-link-page;
 				text-transform: uppercase;
 				transition: 0.3s all ease;
+				text-decoration: none;
 				
 				&.validate:hover {
 					color: $bg-link-delete-hover;
@@ -82,4 +83,8 @@ $color-link-hover-page: #217ED3;
 	transform: rotateX(0deg) scale(1);
 	transition: all 0.2s linear;
 	visibility: visible;
+}
+
+.clear {
+	clear: both;
 }

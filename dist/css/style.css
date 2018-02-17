@@ -16,7 +16,7 @@
     z-index: 100;
     margin: auto;
     margin-top: 15%;
-    width: 960px;
+    width: 60%;
     padding: 10px; }
     .popup .content h2 {
       margin-bottom: 20px; }
@@ -38,7 +38,8 @@
         padding: 10px;
         color: #2196F3;
         text-transform: uppercase;
-        transition: 0.3s all ease; }
+        transition: 0.3s all ease;
+        text-decoration: none; }
         .popup .content .link a.validate:hover {
           color: #DD2A2A; }
         .popup .content .link a.cancel:hover {
@@ -54,3 +55,6 @@
   transform: rotateX(0deg) scale(1);
   transition: all 0.2s linear;
   visibility: visible; }
+
+.clear {
+  clear: both; }
