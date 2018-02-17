@@ -35,44 +35,11 @@ class RibsPopup {
   closePopup(event) {
     event.preventDefault();
 
-    const popup = this.parents(event.currentTarget, '.popup');
+    const popup = RibsCore.parents(event.currentTarget, '.popup');
 
     if (popup !== null) {
       popup.classList.remove('displayed');
     }
-  }
-
-  /**
-   * @param element
-   * @param wanted
-   * @returns {*}
-   * method to get a wanted parent in parentsNodes of an element
-   */
-  parents(element, wanted) {
-    for ( ; element && element !== document; element = element.parentNode) {
-      if (this.checkWanted(wanted) === 'class' && element.classList.contains(wanted.split('.')[1])) {
-        return element;
-      } else if (this.checkWanted(wanted) === 'id' && element.id === wanted.split('#')[1]) {
-        return element;
-      }
-    }
-
-    return null;
-  }
-
-  /**
-   * @param wanted
-   * @returns {*}
-   * permet de tester si un élément cherché est une class ou un id
-   */
-  checkWanted(wanted) {
-    if (wanted.indexOf('.') !== -1) {
-      return 'class';
-    } else if (wanted.indexOf('#') !== -1) {
-      return 'id';
-    }
-
-    return null;
   }
 }
 
