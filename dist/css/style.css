@@ -17,6 +17,7 @@
     margin: auto;
     margin-top: 15%;
     width: 60%;
+    max-width: 960px;
     padding: 10px; }
     .popup .content h2 {
       margin-bottom: 20px; }
