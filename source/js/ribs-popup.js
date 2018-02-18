@@ -10,7 +10,7 @@ class RibsPopup {
 
     Array.from(links).forEach((element) => {
       element.addEventListener('click', (event) => this.openPopup(event));
-    })
+    });
   }
 
   /**
@@ -26,19 +26,36 @@ class RibsPopup {
 
     popup.classList.add('displayed');
 
-    popup.querySelector('.link .cancel').addEventListener('click', (event) => this.closePopup(event));
-    popup.querySelector('.link .validate').addEventListener('click', (event) => this.setActionValidate(event, link));
+    const dataClose = popup.querySelectorAll('.link [data-close]');
+    const dataValidate = popup.querySelectorAll('.link [data-validate]');
+
+    if (dataClose.length > 0) {
+      const dataClose = popup.querySelectorAll('.link [data-close]');
+      Array.from(dataClose).forEach((element) => {
+        element.addEventListener('click', (event) => this.closePopup(event));
+      });
+    }
+
+    if (dataValidate.length > 0) {
+      Array.from(dataValidate).forEach((element) => {
+        element.addEventListener('click', (event) => this.setActionValidate(event, link));
+      });
+    }
   }
 
+  /**
+   * @param event
+   * @param link
+   * méthode qui gère l'action à effectuer au click sur le bouton data-validate
+   * soit renvoi vers une url via data-href ou submit un form via data-form
+   */
   setActionValidate(event, link) {
-    /*event.preventDefault();*/
-
     const popup = RibsCore.parents(event.currentTarget, '.popup');
 
     if (link.dataset.href !== null && link.dataset.href !== undefined) {
       event.currentTarget.href = link.dataset.href;
     } else if (link.dataset.form !== null && link.dataset.form !== undefined) {
-      /*document.getElementById(link.dataset.form).*/
+      document.getElementById(link.dataset.form).submit();
     }
   }
 

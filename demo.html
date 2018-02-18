@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="dist/css/style.css">
 	</head>
 	<body>
-		<a href="" data-ribspopup class="delete open-popup" data-popup="popup-test" data-href="/test">Supprimer ce compte</a>
+		<a href="#" class="delete open-popup" data-ribspopup data-href="/test" data-popup="popup-test">Supprimer ce compte</a>
 		
 		<div class="popup" id="popup-test">
 			<div class="content">
@@ -15,8 +15,8 @@
 				<p class="warning">You can go back if you delete !</p>
 				
 				<div class="link">
-					<a class="cancel">Cancel</a>
-					<a href="" class="validate">Validate</a>
+					<a class="cancel" data-close>Cancel</a>
+					<a href="#" class="validate"  data-validate>Validate</a>
 				</div>
 				<div class="clear"></div>
 			</div>
