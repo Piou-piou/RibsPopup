@@ -21,8 +21,11 @@ class RibsPopup {
     event.preventDefault();
 
     const link = event.currentTarget;
-    const dataPopup = event.currentTarget.dataset.popup;
-    const popup = document.getElementById(dataPopup);
+    const popup = document.getElementById(event.currentTarget.dataset.popup);
+
+    if (event.currentTarget.dataset.ajax !== undefined) {
+      this.setContent(popup, event.currentTarget.dataset.ajax)
+    }
 
     popup.classList.add('displayed');
 
@@ -69,6 +72,25 @@ class RibsPopup {
     if (popup !== null) {
       popup.classList.remove('displayed');
     }
+  }
+
+  /**
+   * @param popup
+   * @param ajaxUrl
+   * mathod that add the content of ajax request to the popup
+   */
+  setContent(popup, ajaxUrl) {
+    const popupContent = popup.querySelector('#set-content');
+    const paramUrl = {
+      method: 'GET',
+      headers: new Headers(),
+    }
+
+    fetch (ajaxUrl, paramUrl)
+    .then(response => response.text())
+    .then((result) => {
+      popupContent.innerHTML = result;
+    });
   }
 }
 
