@@ -57,6 +57,8 @@ class RibsPopup {
       event.currentTarget.href = link.dataset.href;
     } else if (link.dataset.form !== null && link.dataset.form !== undefined) {
       document.getElementById(link.dataset.form).submit();
+    } else {
+      this.closePopup(event);
     }
   }
 
