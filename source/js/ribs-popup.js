@@ -50,8 +50,6 @@ class RibsPopup {
    * soit renvoi vers une url via data-href ou submit un form via data-form
    */
   setActionValidate(event, link) {
-    const popup = RibsCore.parents(event.currentTarget, '.popup');
-
     if (link.dataset.href !== null && link.dataset.href !== undefined) {
       event.currentTarget.href = link.dataset.href;
     } else if (link.dataset.form !== null && link.dataset.form !== undefined) {
