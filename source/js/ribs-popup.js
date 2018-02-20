@@ -49,8 +49,8 @@ class RibsPopup {
   /**
    * @param event
    * @param link
-   * méthode qui gère l'action à effectuer au click sur le bouton data-validate
-   * soit renvoi vers une url via data-href ou submit un form via data-form
+   * method that trigger action to do on click on data-validate button
+   * or send back on an url with data-href or submit a form with data-form
    */
   setActionValidate(event, link) {
     if (link.dataset.href !== null && link.dataset.href !== undefined) {
