@@ -83,12 +83,13 @@ class RibsPopup {
    */
   setContent(popup, ajaxUrl) {
     const popupContent = popup.querySelector('#set-content');
-    const paramUrl = {
-      method: 'GET',
-      headers: new Headers(),
-    }
 
-    fetch (ajaxUrl, paramUrl)
+    const request =  new Request(ajaxUrl, {
+      method: 'POST',
+      credentials: 'same-origin',
+    });
+
+    fetch (request)
     .then(response => response.text())
     .then((result) => {
       popupContent.innerHTML = result;
