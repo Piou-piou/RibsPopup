@@ -1,16 +1,12 @@
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-  filename: "./dist/css/style.css",
-  disable: process.env.NODE_ENV === "development"
-});
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   entry: ['./source/scss/style.scss', './source/js/ribs-popup.js'],
   output: {
-    filename: 'dist/js/ribs-popup.js'
+    filename: 'js/ribs-popup.js'
   },
   module: {
     rules: [
@@ -22,18 +18,24 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: extractSass.extract({
-          use: [
-            {loader: 'css-loader'},
-            {loader: 'sass-loader'}
-          ],
-          fallback: "style-loader"
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       }
     ]
   },
   plugins: [
     new UglifyJsPlugin(),
-    extractSass
-  ]
+    new MiniCssExtractPlugin({
+      filename: 'css/style.min.css',
+      chunkFilename:'css/style.min.css',
+    }),
+  ],
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
 };
