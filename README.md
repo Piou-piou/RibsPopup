@@ -40,7 +40,7 @@ To open a popup, you just have to put in the html element you want those attribu
 - data-ajax : recieve the url to open in ajax (will put content in #set-content of the popup)
 
 ### the popup div
-```
+```HTML
 <div class="popup" id="popup-test">
 			<div class="content">
 				<div id="set-content">
