@@ -1,6 +1,6 @@
 {
   "name": "ribs-popup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This module is used to display popup box with ajax or inline content",
   "main": "index.js",
   "scripts": {
