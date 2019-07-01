@@ -70,7 +70,7 @@ class RibsPopup {
   closePopup(event) {
     event.preventDefault();
 
-    const popup = RibsCore.parents(event.currentTarget, '.popup');
+    const popup = RibsCore.parents(event.currentTarget, '.ribs-popup');
 
     if (popup !== null) {
       popup.classList.remove('ribs-displayed');
