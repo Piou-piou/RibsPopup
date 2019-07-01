@@ -27,7 +27,8 @@ class RibsPopup {
       this.setContent(popup, event.currentTarget.dataset.ajax)
     }
 
-    popup.classList.add('displayed');
+    popup.classList.add('ribs-displayed');
+    document.body.classList.add('ribs-popup-body');
 
     const dataClose = popup.querySelectorAll('.link [data-close]');
     const dataValidate = popup.querySelectorAll('.link [data-validate]');
@@ -72,7 +73,8 @@ class RibsPopup {
     const popup = RibsCore.parents(event.currentTarget, '.popup');
 
     if (popup !== null) {
-      popup.classList.remove('displayed');
+      popup.classList.remove('ribs-displayed');
+      document.body.classList.remove('ribs-popup-body');
     }
   }
 
