@@ -2,6 +2,9 @@ $bg-link-delete: #F34336;
 $bg-link-delete-hover: #DD2A2A;
 $color-link-page: #2196F3;
 $color-link-hover-page: #217ED3;
+$color-link-close: #b5b5b5;
+$bg-link-close: #E1E1E1;
+$bg-link-close-hover: #CCC;
 
 /*------------------------------ POPUP -------------------------------------------------------*/
 .ribs-popup {
@@ -25,6 +28,7 @@ $color-link-hover-page: #217ED3;
 	}
 	
 	.content {
+		position: relative;
 		background-color: #fff;
 		display: block;
 		z-index: 100;
@@ -79,11 +83,22 @@ $color-link-hover-page: #217ED3;
 	}
 	
 	.close {
-		font-size: 30px;
-		color: #fff;
-		float: right;
-		margin: 20px 20px 0 0;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: $bg-link-close;
+		color: $color-link-close;
+		transition: 0.3s all ease;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		border-radius: 50%;
+		text-align: center;
 		cursor: pointer;
+
+		&:hover {
+			background: $bg-link-close-hover;
+		}
 	}
 
 	.clear {
