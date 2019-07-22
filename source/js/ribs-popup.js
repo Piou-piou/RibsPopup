@@ -30,11 +30,10 @@ class RibsPopup {
     popup.classList.add('ribs-displayed');
     document.body.classList.add('ribs-popup-body');
 
-    const dataClose = popup.querySelectorAll('.link [data-close]');
-    const dataValidate = popup.querySelectorAll('.link [data-validate]');
+    const dataClose = popup.querySelectorAll('.ribs-popup [data-close]');
+    const dataValidate = popup.querySelectorAll('.ribs-popup [data-validate]');
 
     if (dataClose.length > 0) {
-      const dataClose = popup.querySelectorAll('.link [data-close]');
       Array.from(dataClose).forEach((element) => {
         element.addEventListener('click', (event) => this.closePopup(event));
       });
