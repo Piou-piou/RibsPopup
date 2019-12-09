@@ -47,6 +47,32 @@ class RibsPopup {
   }
 
   /**
+   * method to open a popup by a js call function
+   * @param popupId
+   */
+  openJsPopup(popupId) {
+    const popup = document.getElementById(popupId);
+
+    popup.classList.add('ribs-displayed');
+    document.body.classList.add('ribs-popup-body');
+
+    const dataClose = popup.querySelectorAll('.ribs-popup [data-close]');
+    const dataValidate = popup.querySelectorAll('.ribs-popup [data-validate]');
+
+    if (dataClose.length > 0) {
+      Array.from(dataClose).forEach((element) => {
+        element.addEventListener('click', (event) => this.closePopup(event));
+      });
+    }
+
+    if (dataValidate.length > 0) {
+      Array.from(dataValidate).forEach((element) => {
+        element.addEventListener('click', (event) => this.setActionValidate(event, null));
+      });
+    }
+  }
+
+  /**
    * @param event
    * @param link
    * method that trigger action to do on click on data-validate button
