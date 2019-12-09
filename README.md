@@ -41,7 +41,7 @@ To open a popup, you just have to put in the html element you want those attribu
 
 ### the popup div
 ```HTML
-<div class="popup" id="popup-test">
+<div class="ribs-popup" id="popup-test">
 			<div class="content">
 				<div id="set-content">
 					<h2>Are you sure you want to delete this item ?</h2>
